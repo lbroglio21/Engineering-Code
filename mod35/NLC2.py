@@ -85,13 +85,13 @@ def total(num):
 			finalCount+=11
 
 
-number=input("Enter and integer between 1 and 1000 ")
-number=int(number)
-if number>1000 or number<1:
-	print("that answer is invalid")
-else:
-	total(number)
-	print(finalCount)
+
+
+
+
+
+
+
 
 
 
