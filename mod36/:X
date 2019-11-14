@@ -1,0 +1,24 @@
+import RoboPiLib as RPL
+import setup
+import post_to_web as PTW
+
+sensor_pin = 16
+RPL.pinMode(sensor_pin,RPL.INPUT)
+
+running=True
+braking = False
+m1Speed = -1400 
+m2Speed = 1400
+while running:
+    reading=RPL.digitalRead(sensor_pin)
+    
+    if reading ==0:
+        braking == True
+    if braking == True and m1Speed!=0 and m2Speed!=0:
+        m1Speed+=100
+        m2Speed-=100
+    elif braking == False:
+        RPL.servoWrite(0,m1Speed)
+        RPL.servoWrite(1,m2Speed)
+        
+
