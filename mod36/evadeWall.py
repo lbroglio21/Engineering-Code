@@ -23,7 +23,9 @@ while running:
 
 
 
-    rt=t-ts
+
+
+    rt=int(t-ts)
     reading=RPL.digitalRead(sensor_pin)
     reading1=RPL.digitalRead(sensor_pin1)
     if reading ==0:
@@ -37,8 +39,9 @@ while running:
         print(tw)
 
 
-    if rt - tw == 3.5:
-  
+    if rt - tw == 3:
+
+ 	time.sleep(.5) 
         m2Speed = 1600
         seenTwice = False
 
