@@ -13,4 +13,12 @@ while running:
 	RPL.servoWrite(1,mSpeed2)
 	RPL.servoWrite(0,mSpeed)
 	
-		
+	if distance>200:
+		mSpeed=1450
+		mSpeed2=1600
+	if distance<200:
+		mSpeed=1400
+		mSpeed2=1550
+	else:
+		mSpeed=1400
+		mSpeed2=1600			

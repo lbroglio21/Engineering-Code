@@ -120,7 +120,8 @@ def getPacket():
   chk = bytearray(ser.read(1))[0]
 
   if (checksum&255) != chk:
-    print "Checksum Error!"
+
+    print( "Checksum Error!")
 
 #  print "Waiting for EOT"
 
@@ -175,7 +176,7 @@ def RoboPiInit(device, bps):
   ser = serial.Serial(device,bps)
 
   if ser == -1:
-    print "Error - Unable to open ", device
+    print( "Error - Unable to open ", device)
     exit(1)
 
   return ser
@@ -277,7 +278,7 @@ def wl2ba(lst):
 
 def pba(a):
   for ix in range(0,len(a)):
-    print ix,a[ix]
+    print( ix,a[ix])
 
 #**********************************************************************************
 
