@@ -5,6 +5,6 @@ running=True
 while running:
 
 
-	print (RPL.analogRead(6))
+	print (RPL.analogRead(1))
 
 	time.sleep(1)	
