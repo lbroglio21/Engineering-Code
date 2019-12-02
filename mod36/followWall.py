@@ -6,7 +6,7 @@ sensor_pin=16
 mSpeed=1400
 mSpeed2=1600
 Asensor_pin=6
-Fdistance=200
+Fdistance=300
 
 
 running=True
@@ -15,13 +15,13 @@ while running:
 	RPL.servoWrite(1,mSpeed2)
 	RPL.servoWrite(0,mSpeed)
 	
-	if distance>Fdistance:
-		mSpeed=1450
+	if distance>Fdistance and distance>10:
+		mSpeed=00
 		mSpeed2=1600
 		print(distance)
-	if distance<Fdistance:
+	if distance<Fdistance or distance<200:
 		mSpeed=1400
-		mSpeed2=1550
+		mSpeed2=00
 		print(distance)
 
 	else:
