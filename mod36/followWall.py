@@ -6,7 +6,7 @@ sensor_pin=16
 mSpeed=1400
 mSpeed2=1600
 Asensor_pin=6
-Fdistance=300
+Fdistance=250
 
 
 running=True
@@ -19,7 +19,7 @@ while running:
 		mSpeed=00
 		mSpeed2=1600
 		print(distance)
-	if distance<Fdistance or distance<200:
+	if distance<Fdistance: 
 		mSpeed=1400
 		mSpeed2=00
 		print(distance)
