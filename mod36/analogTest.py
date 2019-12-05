@@ -7,4 +7,4 @@ while running:
 
 	print (RPL.analogRead(6))
 
-	time.sleep(1)	
+##	time.sleep(1)	
