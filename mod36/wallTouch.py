@@ -1,6 +1,7 @@
 import RoboPiLib as RPL
 import setup
 import post_to_web as PTW
+import time 
 
 sensor_pin = 16
 RPL.pinMode(sensor_pin,RPL.INPUT)
@@ -18,18 +19,19 @@ while running:
 	braking=False
     if braking == True and m1Speed!=1490 and m2Speed!=1510:
         print("If statement fired")
-        m1Speed+=10
-        m2Speed-=10
-
-
-    if m1Speed == 1490 and m2Speed == 1510:
-	sleep(1)
-	m1Speed+=10
-	m2Speed-=10
-    if m1Speed == 1500 and m2Speed == 1500:
-        m1Speed =00
-        m2Speed =00
+        m1Speed=1490
+        m2Speed=1550
+        RPL.servoWrite(0,m1Speed)
+        RPL.servoWrite(1,m2Speed)
+    	time.sleep(5)
+	m1Speed=00
+	m2Speed=00
+        RPL.servoWrite(0,m1Speed)
+        RPL.servoWrite(1,m1Speed)
         running=False
+
+
+
 
     RPL.servoWrite(0,m1Speed)
     RPL.servoWrite(1,m2Speed)
